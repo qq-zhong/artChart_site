@@ -1,0 +1,62 @@
+/* Reset default margin and padding */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Make the grid container cover the entire page */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 150px);  /* Larger grid cells to show fewer grids */
+    grid-template-rows: repeat(auto-fill, 150px);     /* Larger grid cells to show fewer grids */
+    gap: 10px;  /* Space between images */
+    height: 100vh; /* Full viewport height */
+    width: 100vw;  /* Full viewport width */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure it stays behind other content */
+    /* No background color, so the images will show without any grid background */
+}
+
+/* Style for the grid items */
+.grid-item {
+    width: 150px;   /* Grid cell size */
+    height: 150px;  /* Grid cell size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Ensure the image stays inside the grid cell */
+}
+
+.grid-item img {
+    width: 50px;    /* Make the images smaller (1/4 of original size) */
+    height: 50px;   /* Make the images smaller */
+    object-fit: cover; /* Maintain aspect ratio and cover the space */
+    border-radius: 8px;  /* Optional: Add rounded corners for the images */
+    transition: none; /* No transition for teleportation effect */
+}
+
+/* Chessboard pattern: Alternating rows will move in opposite directions */
+.grid-item:nth-child(odd) img {
+    animation: blinkUpDown 4s infinite steps(1);  /* Slower teleportation effect for odd rows */
+}
+
+.grid-item:nth-child(even) img {
+    animation: blinkUpDown 4s infinite steps(1) reverse;  /* Slower teleportation effect for even rows */
+}
+
+/* Blink up and down with an instant teleportation effect */
+@keyframes blinkUpDown {
+    0% {
+        transform: translateY(0);  /* Start at the normal position */
+    }
+    50% {
+        transform: translateY(-20px);  /* Teleport 20px above */
+    }
+    100% {
+        transform: translateY(0);  /* Return to the original position */
+    }
+}
