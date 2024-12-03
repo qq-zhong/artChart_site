@@ -1,0 +1,193 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    display: flex;
+}
+
+/* Make the grid container cover the entire page */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 150px);  /* Larger grid cells to show fewer grids */
+    grid-template-rows: repeat(auto-fill, 150px);     /* Larger grid cells to show fewer grids */
+    gap: 10px;  /* Space between images */
+    height: 100vh; /* Full viewport height */
+    width: 100vw;  /* Full viewport width */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure it stays behind other content */
+    /* No background color, so the images will show without any grid background */
+}
+
+/* Style for the grid items */
+.grid-item {
+    width: 150px;   /* Grid cell size */
+    height: 150px;  /* Grid cell size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Ensure the image stays inside the grid cell */
+}
+
+.grid-item img {
+    width: 50px;    /* Make the images smaller (1/4 of original size) */
+    height: 50px;   /* Make the images smaller */
+    object-fit: cover; /* Maintain aspect ratio and cover the space */
+    border-radius: 8px;  /* Optional: Add rounded corners for the images */
+    transition: none; /* No transition for teleportation effect */
+}
+
+/* Chessboard pattern: Alternating rows will move in opposite directions */
+.grid-item:nth-child(odd) img {
+    animation: blinkUpDown 4s infinite steps(1);  /* Slower teleportation effect for odd rows */
+}
+
+.grid-item:nth-child(even) img {
+    animation: blinkUpDown 4s infinite steps(1) reverse;  /* Slower teleportation effect for even rows */
+}
+
+/* Blink up and down with an instant teleportation effect */
+@keyframes blinkUpDown {
+    0% {
+        transform: translateY(0);  /* Start at the normal position */
+    }
+    50% {
+        transform: translateY(-20px);  /* Teleport 20px above */
+    }
+    100% {
+        transform: translateY(0);  /* Return to the original position */
+    }
+}
+
+
+
+
+.outer-container {
+    margin: 50px 400px;
+    padding: 10px; /* Space between black line and custom component */
+    border: 1px solid #ddd; /* Black line around the outer container */
+    display: inline-block; /* Wraps tightly around the content */
+    background-color: #fff; /* Optional: background color for outer container */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    display: flex;
+  }
+  
+
+/* General styles for the component */
+.custom-component {
+    /* margin: 50px 400px; Top/bottom: 50px, Left/right: 400px */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 1px solid #ddd; /* Optional: border for clarity */
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fcfcfc; /* Light cyan: Background for the entire container */
+    position: relative; /* To position pseudo-elements relative to this container */
+  }
+  
+/* Text container: takes up exactly 50% of the width */
+.text-container {
+  width: 40%; /* Text container is exactly half the width */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Aligns text to the top */
+  align-items: flex-start; /* Aligns text to the left */
+  /* background-color: #ffccbc; Light orange: Text area */
+  padding: 10px; /* Adds some padding around the text */
+  box-sizing: border-box;
+}
+
+/* Image container: takes up the remaining space */
+.image-container {
+  width: 60%; /* Remaining 50% for the image */
+  display: flex;
+  justify-content: flex-start; /* Aligns the image to the left */
+  align-items: center; /* Centers image vertically */
+  /* background-color: #c5e1a5; Light green: Image container */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.image-container img {
+  max-width: 100%; /* Ensures the image fits within the container */
+  height: auto; /* Keep the image height proportional */
+  display: block;
+}
+
+/* Centering the adaptive-outer-container within the body, but not fixed to the screen */
+.adaptive-outer-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 20px; /* Space between the child content and the outer border */
+    border: 1px solid #ddd; /* Border around the container */
+    background-color: #fff; /* Optional background color */
+    width: 100%; /* Make it take up full width of the container */
+    max-width: 400px; /* Set a maximum width to avoid stretching too wide */
+    box-sizing: border-box; /* Include padding in width/height calculation */
+    margin: 20px auto; /* Center the container with space above and below */
+}
+
+/* Optional: Add styles for the inner container */
+.vertical-center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Optional: center-align text */
+}
+
+/* Optional: Style links and buttons within the container */
+.vertical-center-container a {
+    margin: 10px 0; /* Space between links */
+    text-decoration: none;
+    color: #0073e6; /* Link color */
+}
+
+.vertical-center-container a:hover {
+    text-decoration: underline; /* Optional hover effect */
+}
+
+.centered-paragraph {
+    text-align: center; /* Center-align the text */
+    padding: 10px; /* Space around the text inside the border */
+    border: 1px solid black; /* White border around the entire element */
+    margin: 20px auto; /* Center the paragraph horizontally with some space above and below */
+    max-width: 24%; /* Limit the width so it doesn't stretch too much */
+    background-color: #fff; /* White background for visibility */
+    box-sizing: border-box; /* Include border in the width calculation */
+}
+
+.team-effort-breakdown {
+    width: 80%; /* Set the table width to 80% of the container */
+    margin: 20px auto; /* Center the table horizontally with automatic left and right margins */
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+}
+
+.team-effort-breakdown caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.team-effort-breakdown th,
+.team-effort-breakdown td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.team-effort-breakdown td ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.team-effort-breakdown td li {
+    margin-bottom: 5px;
+}
