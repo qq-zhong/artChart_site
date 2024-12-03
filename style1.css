@@ -66,7 +66,7 @@ body, html {
 
 .outer-container {
     margin: 50px 400px;
-    padding: 10px; /* Space between black line and custom component */
+    padding: 5px; /* Space between black line and custom component */
     border: 1px solid #ddd; /* Black line around the outer container */
     display: inline-block; /* Wraps tightly around the content */
     background-color: #fff; /* Optional: background color for outer container */
