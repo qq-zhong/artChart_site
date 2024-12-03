@@ -69,33 +69,31 @@ body, html {
 
 
 
-
+/* Outer container - tightly wraps the custom component */
 .outer-container {
-    max-width: 55vw;
-    margin: 50px 400px;
-    padding: 5px; /* Space between black line and custom component */
-    border: 1px solid #ddd; /* Black line around the outer container */
-    display: inline-block; /* Wraps tightly around the content */
-    background-color: #fff; /* Optional: background color for outer container */
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
-    display: flex;
-  }
+    display: flex; /* Enables flexbox for alignment */
+    flex-direction: column; /* Stacks items vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    margin: 50px auto; /* Centers the container horizontally */
+    padding: 10px; /* Adds space inside the container */
+    background-color: #fff; /* Background color */
+    border: 1px solid #ddd; /* Optional border */
+    width: fit-content; /* Shrinks container to fit its content */
+    box-sizing: border-box; /* Ensures padding and border are included in the dimensions */
+}
 
-
-/* General styles for the component */
+/* Custom component - layout of content inside */
 .custom-component {
-    /* margin: 50px 400px; Top/bottom: 50px, Left/right: 400px */
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    border: 1px solid #ddd; /* Optional: border for clarity */
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: #fcfcfc; /* Light cyan: Background for the entire container */
-    position: relative; /* To position pseudo-elements relative to this container */
-  }
-  
+    display: flex; /* Flexbox layout for internal content */
+    flex-direction: row; /* Positions content side-by-side */
+    justify-content: space-between; /* Spreads internal content evenly */
+    align-items: center; /* Centers items vertically */
+    padding: 20px; /* Space inside the component */
+    border: 1px solid #ddd; /* Optional border for clarity */
+    background-color: #f9f9f9; /* Light background for distinction */
+}
+
 /* Text container: takes up exactly 50% of the width */
 .text-container {
   width: 40%; /* Text container is exactly half the width */
