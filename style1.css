@@ -75,15 +75,15 @@ body, html {
     flex-direction: column; /* Stacks items vertically */
     justify-content: center; /* Centers content vertically */
     align-items: center; /* Centers content horizontally */
-    margin: 50px auto; /* Centers the container horizontally */
+    margin: 20px auto; /* Centers the container horizontally */
     padding: 10px; /* Adds space inside the container */
     background-color: #fff; /* Background color */
     border: 1px solid #ddd; /* Optional border */
     width: fit-content; /* Shrinks container to fit its content */
+    max-width: 90%; /* Limits width to 90% of the screen on smaller devices */
     box-sizing: border-box; /* Ensures padding and border are included in the dimensions */
 }
 
-/* Custom component - layout of content inside */
 .custom-component {
     display: flex; /* Flexbox layout for internal content */
     flex-direction: row; /* Positions content side-by-side */
@@ -92,6 +92,7 @@ body, html {
     padding: 20px; /* Space inside the component */
     border: 1px solid #ddd; /* Optional border for clarity */
     background-color: #f9f9f9; /* Light background for distinction */
+    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
 }
 
 @media (max-width: 768px) {
