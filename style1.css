@@ -94,6 +94,20 @@ body, html {
     background-color: #f9f9f9; /* Light background for distinction */
 }
 
+@media (max-width: 768px) {
+    .outer-container {
+        width: 100%; /* Use full screen width */
+        margin: 10px; /* Adjust margins for smaller screens */
+        padding: 5px; /* Reduce padding */
+    }
+
+    .custom-component {
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center content */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
+
 /* Text container: takes up exactly 50% of the width */
 .text-container {
   width: 40%; /* Text container is exactly half the width */
