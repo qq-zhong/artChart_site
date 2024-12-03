@@ -75,12 +75,12 @@ body, html {
     flex-direction: column; /* Stacks items vertically */
     justify-content: center; /* Centers content vertically */
     align-items: center; /* Centers content horizontally */
-    margin: 20px auto; /* Centers the container horizontally */
+    margin: 50px auto; /* Adds vertical margin and percentage-based horizontal margin */
     padding: 10px; /* Adds space inside the container */
     background-color: #fff; /* Background color */
     border: 1px solid #ddd; /* Optional border */
     width: fit-content; /* Shrinks container to fit its content */
-    max-width: 90%; /* Limits width to 90% of the screen on smaller devices */
+    max-width: 40%; /* Limits width to 90% of the screen on smaller devices */
     box-sizing: border-box; /* Ensures padding and border are included in the dimensions */
 }
 
