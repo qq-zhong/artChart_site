@@ -3,7 +3,7 @@ body, html {
     padding: 0;
     height: 100%;
     overflow-x: hidden; /* Prevent horizontal scrolling */
-    display: flex;
+    /* display: flex; */
 }
 
 /* Make the grid container cover the entire page */
@@ -14,13 +14,19 @@ body, html {
     gap: 10px;  /* Space between images */
     height: 100vh; /* Full viewport height */
     width: 100vw;  /* Full viewport width */
-    position: absolute;
+    position: fixed; /* Make the background fixed */
     top: 0;
     left: 0;
-    z-index: -1; /* Ensure it stays behind other content */
-    /* No background color, so the images will show without any grid background */
+    z-index: -1; /* Ensure it stays behind all other content */
+    overflow: hidden; /* Prevent grid from causing scrolling */
 }
 
+/* Ensure the site's content properly overlaps */
+.page-wrapper {
+    position: relative; /* Ensure content stacks above the grid background */
+    z-index: 1; /* Content should always be above the grid background */
+    overflow-x: hidden; /* Prevent unnecessary horizontal scrolling */
+}
 /* Style for the grid items */
 .grid-item {
     width: 150px;   /* Grid cell size */
