@@ -71,6 +71,7 @@ body, html {
 
 
 .outer-container {
+    max-width: 55vw;
     margin: 50px 400px;
     padding: 5px; /* Space between black line and custom component */
     border: 1px solid #ddd; /* Black line around the outer container */
@@ -80,7 +81,7 @@ body, html {
     align-items: center; /* Vertically center */
     display: flex;
   }
-  
+
 
 /* General styles for the component */
 .custom-component {
