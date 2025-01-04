@@ -1,3 +1,4 @@
 # artChart_site
 
-be aware cloud build api is enbabled in qq -testing, could cost money
+checkout the website here:
+https://qq-zhong.github.io/artChart_site/
